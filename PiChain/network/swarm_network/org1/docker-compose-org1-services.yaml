@@ -15,7 +15,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == ip-172-31-31-84
+          - node.hostname ==  ip-172-31-20-5
     image: hyperledger/fabric-orderer:amd64-1.4.0
     hostname: orderer.example.com
     environment:
@@ -42,7 +42,6 @@ services:
       - ../../artifacts/orderer.genesis.block:/var/hyperledger/orderer/orderer.genesis.block
       - ../../crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
       - ../../crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls:/var/hyperledger/orderer/tls
-      - orderer_backup:/var/hyperledger/production/orderer
     ports:
       - 7050:7050
       - 8443:8443
@@ -63,7 +62,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == basic-hostname
+          - node.hostname == ip-172-31-20-5
     hostname: ca.org1.example.com
     image: hyperledger/fabric-ca:amd64-1.4.0
     environment:
@@ -98,7 +97,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == basic-hostname
+          - node.hostname ==  ip-172-31-20-5
     hostname: couchdb0
     image: hyperledger/fabric-couchdb:amd64-0.4.14
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
@@ -122,7 +121,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == basic-hostname
+          - node.hostname == ip-172-31-20-5
     hostname: cli
     image: hyperledger/fabric-tools:amd64-1.4.0
     tty: true
