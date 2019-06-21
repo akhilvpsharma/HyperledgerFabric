@@ -15,7 +15,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == ip-172-31-20-5
+          - node.hostname == ip-172-31-31-84
     image: hyperledger/fabric-ca:amd64-1.4.0
     hostname: ca.org2.example.com
     environment:
@@ -45,7 +45,7 @@ services:
         max_attempts: 3
       placement:
         constraints:
-          - node.hostname == basic-hostname
+          - node.hostname == ip-172-31-20-5
     hostname: couchdb1
     image: hyperledger/fabric-couchdb:amd64-0.4.14
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
